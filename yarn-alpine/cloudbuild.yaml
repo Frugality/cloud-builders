@@ -3,21 +3,21 @@
 
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '--tag=gcr.io/$PROJECT_ID/yarn', '.']
+  args: ['build', '--tag=gcr.io/$PROJECT_ID/yarn-alpine', '.']
 
 
 # Print npm version.
-- name: 'gcr.io/$PROJECT_ID/yarn'
+- name: 'gcr.io/$PROJECT_ID/yarn-alpine'
   args: ['--version']
 
 # Test the examples.
 
 # hello_world
-- name: 'gcr.io/$PROJECT_ID/yarn'
+- name: 'gcr.io/$PROJECT_ID/yarn-alpine'
   args: ['install']
   dir: 'examples/hello_world'
-- name: 'gcr.io/$PROJECT_ID/yarn'
+- name: 'gcr.io/$PROJECT_ID/yarn-alpine'
   args: ['test']
   dir: 'examples/hello_world'
 
-images: ['gcr.io/$PROJECT_ID/yarn']
+images: ['gcr.io/$PROJECT_ID/yarn-alpine']
