@@ -1,7 +1,7 @@
 steps:
-- name: 'gcr.io/$PROJECT_ID/npm'
+- name: 'gcr.io/$PROJECT_ID/npm-ssh'
   args: ['install']
-- name: 'gcr.io/$PROJECT_ID/npm'
+- name: 'gcr.io/$PROJECT_ID/npm-ssh'
   args: ['test']
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '--tag=gcr.io/$PROJECT_ID/hello_npm', '.']
